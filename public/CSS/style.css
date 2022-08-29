@@ -1,0 +1,11 @@
+.boutonStart {
+    padding: 15px;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    border-radius: 0.5em;
+}
+.divBtn {
+    display: flex;
+    justify-content: space-around;
+}
