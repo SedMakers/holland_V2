@@ -14,8 +14,12 @@
                     <h3 class="question">{{ question.question }}</h3>
                 </div>
                 <div class="choix">
-                    <label for="choix">J'aime</label>
-                    <input type="checkbox" name="choix" id="choix">
+                    <div class="range" >
+                    <label for="choix">Faible</label>
+                    <label for="choix">Moyen</label>
+                    <label for="choix">Fort</label>
+                    </div>
+                    <input type="range" name="choix" id="choix" min="0" max="1" step="0.5" class="inputRange">
                     {#                    <label for="choix">J'aime pas</label> #}
                     {#                    <input type="checkbox" name="choix" id="choix"> #}
                 </div>
