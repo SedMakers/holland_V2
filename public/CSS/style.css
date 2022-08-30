@@ -26,3 +26,17 @@
 input {
     margin-right: 5em;
 }
+
+.divBtnSubmit {
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnSubmit {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 0.5em;
+    border: 2px solid dimgrey;
+    cursor: pointer;
+}
