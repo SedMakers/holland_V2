@@ -1,7 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block head %}Hello ThemeQuatreController!{% endblock %}
+{% block head %}
+    <h1 class="title">Theme : Personnalités</h1>
+{% endblock %}
 
 {% block body %}
+
+    <form action="{{ asset("") }}" method="post">
+
+        {% for questions in personnalite %}
+            <div class="formulaire">
+                <div>
+                    <h3 class="question">{{ questions.question }}</h3>
+                </div>
+                <div class="choix">
+                    <label for="choix">J'aime</label>
+                    <input type="checkbox" name="choix" id="choix">
+                    <label for="choix">J'aime pas</label>
+                    <input type="checkbox" name="choix" id="choix">
+                </div>
+            </div>
+        {% endfor %}
+
+        <input type="submit">
+
+    </form>
+
 
 {% endblock %}
