@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Aptitudes;
 use App\Form\AptitudeType;
-use App\Repository\PersonnaliteRepository;
+
+use App\Repository\AptitudesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +18,7 @@ class ThemeAptitudesController extends AbstractController
     public function index(
         Request $request,
         EntityManagerInterface $entityManager,
-        PersonnaliteRepository $aptitudeRepository
+        AptitudesRepository $aptitudeRepository
     ): Response
     {
         $aptitude = new Aptitudes();
