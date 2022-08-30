@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello ActivitesController!{% endblock %}
+{#{% block title %}#}
+{#    Intérêts & Activités#}
+{#{% endblock %}#}
+{% block head %}
+    <h1 class="title">Thème : Intérêts & Activités</h1>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <form action="{{ asset("") }}" method="post">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Stagiaire/PhpstormProjects/holland_V2/src/Controller/ActivitesController.php'|file_link(0) }}">src/Controller/ActivitesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Stagiaire/PhpstormProjects/holland_V2/templates/activites/index.html.twig'|file_link(0) }}">templates/activites/index.html.twig</a></code></li>
-    </ul>
-</div>
+        {% for questions in activites %}
+
+            <div class="formulaire">
+                <div>
+                    <h3 class="question">{{ questions.question }}</h3>
+                </div>
+                <div class="choix">
+                    <label class="choix">J'aime
+                    <input type="checkbox" name="choix" class="choix_input">
+                    <svg class="choix_check" width="12"
+                         height="12">
+                        <polyline points="9,3 4,8 1,5"></polyline>
+                    </svg>
+                    </label>
+                    {#                    <label for="choix">J'aime pas</label> #}
+                    {#                    <input type="checkbox" name="choix" id="choix"> #}
+                </div>
+            </div>
+        {% endfor %}
+
+        <input type="submit">
+
+    </form>
+
+
 {% endblock %}
