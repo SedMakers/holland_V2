@@ -20,11 +20,15 @@
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    border-bottom: 3px solid black;
-}
+    border-bottom: 1px solid black;
+    width: 70em;
+    }
 
 input {
     margin-right: 5em;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size:2em;
 }
 label {
     margin-right: 2em;
