@@ -20,23 +20,57 @@
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    border-bottom: 3px solid black;
-}
+    border-bottom: 1px solid black;
+    width: 70em;
+    }
 
 input {
     margin-right: 5em;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size:2em;
 }
-
-.divBtnSubmit {
-
-    display: flex;
-    justify-content: flex-end;
+label {
+    margin-right: 2em;
 }
+.range{
+    margin-left: 1.5em;
+}
+.inputRange {
+    width: 16em;
+    margin-left: 1em;
+}
+/*-----------------------*/
 
-.btnSubmit {
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 0.5em;
-    border: 2px solid dimgrey;
+
+input.custom {
+    accent-color: green;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
     cursor: pointer;
 }
+
+input.custom:checked {
+    -webkit-appearance: checkbox;
+}
+
+/*remplacement de la checkbox carrée par une checkbox arrondie et effet de validation*/
+.choix {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choix:hover .choix_check {
+    background: rgb(10, 60, 98);
+}
+

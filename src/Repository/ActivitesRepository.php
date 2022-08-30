@@ -3,8 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Activites;
+use App\Form\ActivitesType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @extends ServiceEntityRepository<Activites>
@@ -16,6 +20,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ActivitesRepository extends ServiceEntityRepository
 {
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Activites::class);
