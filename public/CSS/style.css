@@ -74,26 +74,3 @@ input.custom:checked {
     background: rgb(10, 60, 98);
 }
 
-.choix_input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-}
-
-.choix_input:checked + .choix_check {
-    background: rgb(10, 60, 98);
-    stroke-dashoffset: 0;
-}
-
-.choix_check {
-    border: 0.15rem solid rgb(10, 60, 98);
-    stroke: #f9f9f9;
-    stroke-dasharray: 25;
-    stroke-dashoffset: 25;
-    stroke-linecap: round;
-    stroke-width: 0.2em;
-    border-radius: 1em;
-    fill: none;
-    transition: background 0.4s, stroke-dashoffset
-    0.4s;
-}
