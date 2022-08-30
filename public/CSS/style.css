@@ -5,7 +5,24 @@
     color: black;
     border-radius: 0.5em;
 }
+
+.title {
+    text-align: center;
+}
+
 .divBtn {
     display: flex;
     justify-content: space-around;
+}
+
+.formulaire {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    border-bottom: 3px solid black;
+}
+
+input {
+    margin-right: 5em;
 }
