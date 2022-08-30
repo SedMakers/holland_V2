@@ -19,6 +19,7 @@ class InteretsActivitesType extends AbstractType
             ->add('E')
             ->add('C')
         ;
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void
