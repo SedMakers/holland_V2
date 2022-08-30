@@ -26,3 +26,13 @@
 input {
     margin-right: 5em;
 }
+label {
+    margin-right: 2em;
+}
+.range{
+    margin-left: 1.5em;
+}
+.inputRange {
+    width: 16em;
+    margin-left: 1em;
+}
