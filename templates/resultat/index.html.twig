@@ -8,25 +8,42 @@
         <h1>Résultat RIASEC</h1>
     </div>
 
-    <table class="tableau">
-        <tr>
-            <td>R</td>
-            <td>I</td>
-            <td>A</td>
-            <td>S</td>
-            <td>E</td>
-            <td>C</td>
-        </tr>
+{#    <table class="tableau">#}
+{#        <tr>#}
+{#            <td>R</td>#}
+{#            <td>I</td>#}
+{#            <td>A</td>#}
+{#            <td>S</td>#}
+{#            <td>E</td>#}
+{#            <td>C</td>#}
+{#        </tr>#}
 
-        <tr>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-        </tr>
-    </table>
+{#        <tr>#}
+{#            <td>{{  }}</td>#}
+{#            <td>{{  }}</td>#}
+{#            <td>{{  }}</td>#}
+{#            <td>{{  }}</td>#}
+{#            <td>{{  }}</td>#}
+{#            <td>{{  }}</td>#}
+{#        </tr>#}
+{#    </table>#}
+    {% for resultat in riasec  %}
+        <div class="gridResult">
+            <p id="realiste">R</p>
+            <p id="investigateur">I</p>
+            <p id="artistique">A</p>
+            <p id="social">S</p>
+            <p id="entreprenant">E</p>
+            <p id="conventionnel">C</p>
+            <p>{{ resultat.r }}</p>
+            <p>{{ resultat.i }}</p>
+            <p>{{ resultat.a }}</p>
+            <p>{{ resultat.s }}</p>
+            <p>{{ resultat.e }}</p>
+            <p>{{ resultat.c }}</p>
+
+        </div>
+    {% endfor %}
 
 
 
