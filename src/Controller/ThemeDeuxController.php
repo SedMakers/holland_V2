@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 use App\Form\MetiersType;
+
 use App\Repository\MetiersRepository;
+use App\Repository\RiasecRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,16 +14,52 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ThemeDeuxController extends AbstractController
 {
-    #[Route('/deux', name: 'deux_index')]
+    #[Route('/deux/{serie}', name: 'deux_index')]
     public function index(
-        Request $request,
-        MetiersRepository $metiersRepository
+        Request                 $request,
+        EntityManagerInterface  $entityManager,
+        MetiersRepository       $metiersRepository,
+        RiasecRepository        $riasecRepository,
+        int                     $serie
     ): Response
     {
         $formMetiers = $this->createForm(MetiersType::class);
-        $metier = $metiersRepository->findAll();
+        $metiers = $metiersRepository->findBy(['serie' => $serie]);
+
         $formMetiers->handleRequest($request);
 
-        return $this->renderForm('theme_deux/index.html.twig', compact( 'formMetiers','metier'));
+        if ($_POST) {
+
+            $resultat = $riasecRepository->findOneBy(['id' => 1]);
+            switch ($serie) {
+                case 1 :
+                    $resultat->setR($resultat->getR() + count($_POST) - 1);
+                    break;
+                case 2 :
+                    $resultat->setI($resultat->getI() + count($_POST) - 1);
+                    break;
+                case 3 :
+                    $resultat->setA($resultat->getA() + count($_POST) - 1);
+                    break;
+                case 4 :
+                    $resultat->setS($resultat->getS() + count($_POST) - 1);
+                    break;
+                case 5 :
+                    $resultat->setE($resultat->getE() + count($_POST) - 1);
+                    break;
+                case 6 :
+                    $resultat->setC($resultat->getC() + count($_POST) - 1);
+                    break;
+            }
+            $entityManager->persist($resultat);
+            $entityManager->flush();
+            if ($serie < 6) {
+                return $this->redirectToRoute('deux_index', ['serie' => $serie + 1]);
+            }
+            return $this->redirectToRoute('resultat_index');
+
+        }
+        return $this->renderForm('theme_deux/index.html.twig', compact('metiers', 'serie'));
     }
 }
+

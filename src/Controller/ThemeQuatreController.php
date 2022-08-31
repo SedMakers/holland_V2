@@ -24,34 +24,32 @@ class ThemeQuatreController extends AbstractController
         int                    $serie
     ): Response
     {
-
-
         $formPersonnalite = $this->createForm(PersonnaliteType::class);
         $personnalite = $personnaliteRepository->findBy(['serie' => $serie]);
 
         $formPersonnalite->handleRequest($request);
-        dump($_POST);
+
         if ($_POST) {
-            dump(count($_POST));
+
             $resultat = $riasecRepository->findOneBy(['id' => 1]);
             switch ($serie) {
                 case 1 :
-                    $resultat->setR($resultat->getR() + count($_POST));
+                    $resultat->setR($resultat->getR() + count($_POST) - 1);
                     break;
                 case 2 :
-                    $resultat->setI($resultat->getI() + count($_POST));
+                    $resultat->setI($resultat->getI() + count($_POST) - 1);
                     break;
                 case 3 :
-                    $resultat->setA($resultat->getA() + count($_POST));
+                    $resultat->setA($resultat->getA() + count($_POST) - 1);
                     break;
                 case 4 :
-                    $resultat->setS($resultat->getS() + count($_POST));
+                    $resultat->setS($resultat->getS() + count($_POST) - 1);
                     break;
                 case 5 :
-                    $resultat->setE($resultat->getE() + count($_POST));
+                    $resultat->setE($resultat->getE() + count($_POST) - 1);
                     break;
                 case 6 :
-                    $resultat->setC($resultat->getC() + count($_POST));
+                    $resultat->setC($resultat->getC() + count($_POST) - 1);
                     break;
             }
             $entityManager->persist($resultat);
