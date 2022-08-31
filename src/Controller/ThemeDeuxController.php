@@ -16,11 +16,11 @@ class ThemeDeuxController extends AbstractController
 {
     #[Route('/deux/{serie}', name: 'deux_index')]
     public function index(
-        Request                 $request,
-        EntityManagerInterface  $entityManager,
-        MetiersRepository       $metiersRepository,
-        RiasecRepository        $riasecRepository,
-        int                     $serie
+        Request                $request,
+        EntityManagerInterface $entityManager,
+        MetiersRepository      $metiersRepository,
+        RiasecRepository       $riasecRepository,
+        int                    $serie
     ): Response
     {
         $formMetiers = $this->createForm(MetiersType::class);
@@ -56,7 +56,7 @@ class ThemeDeuxController extends AbstractController
             if ($serie < 6) {
                 return $this->redirectToRoute('deux_index', ['serie' => $serie + 1]);
             }
-            return $this->redirectToRoute('resultat_index');
+            return $this->redirectToRoute('aptitudes_index', ['serie' => 1]);
 
         }
         return $this->renderForm('theme_deux/index.html.twig', compact('metiers', 'serie'));

@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Personnalite;
-use App\Entity\Riasec;
 use App\Form\PersonnaliteType;
 use App\Repository\PersonnaliteRepository;
 use App\Repository\RiasecRepository;
