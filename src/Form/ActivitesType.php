@@ -13,8 +13,7 @@ class ActivitesType extends AbstractType
     {
         $builder
             ->add('question')
-            ->add('serie')
-        ;
+            ->add('serie');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
