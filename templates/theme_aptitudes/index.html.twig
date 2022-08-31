@@ -5,28 +5,30 @@
 {% block body %}
 
 
-    <form action="{{ asset("") }}" method="post">
-
-        {% for question in aptitude %}
+    <form method="post">
+        {% for questions in aptitudes %}
 
             <div class="formulaire">
                 <div>
-                    <h3 class="question">{{ question.question }}</h3>
+                    <h3 class="question">{{ questions.question }}</h3>
                 </div>
                 <div class="choix">
-                    <div class="range" >
-                    <label for="choix">Faible</label>
-                    <label for="choix">Moyen</label>
-                    <label for="choix">Fort</label>
-                    </div>
-                    <input type="range" name="choix" id="choix" min="0" max="1" step="0.5" class="inputRange">
-                    {#                    <label for="choix">J'aime pas</label> #}
-                    {#                    <input type="checkbox" name="choix" id="choix"> #}
+                    <label class="choix">J'aime
+                        <input type="checkbox" name="{{ questions.id }}" class="choix_input">
+                        <svg class="choix_check" width="12"
+                             height="12">
+                            <polyline points="9,3 4,8 1,5"></polyline>
+                        </svg>
+                    </label>
                 </div>
             </div>
         {% endfor %}
 
-        <input type="submit">
+        <div class="divBtnSubmit">
+            <input type="submit"
+                   class="btnSubmit">
+        </div>
+
 
     </form>
 {% endblock %}
