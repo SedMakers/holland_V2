@@ -19,9 +19,9 @@ class ThemeAptitudesController extends AbstractController
 {
     #[Route('/aptitudes/{serie}', name: 'aptitudes_index')]
     public function index(
-        Request $request,
+        Request                $request,
         EntityManagerInterface $entityManager,
-        AptitudesRepository $aptitudeRepository,
+        AptitudesRepository    $aptitudeRepository,
         RiasecRepository       $riasecRepository,
         int                    $serie
     ): Response
@@ -57,10 +57,10 @@ class ThemeAptitudesController extends AbstractController
             }
             $entityManager->persist($resultat);
             $entityManager->flush();
-            while ($serie < 6) {
+            if ($serie < 6) {
                 return $this->redirectToRoute('aptitudes_index', ['serie' => $serie + 1]);
             }
-            return $this->redirectToRoute('resultat_index');
+            return $this->redirectToRoute('themeQuatre_index', ['serie' => 1]);
 
         }
         return $this->renderForm('theme_aptitudes/index.html.twig', compact('aptitudes', 'serie'));
