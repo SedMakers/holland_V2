@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Riasec;
+use App\Repository\RiasecRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,10 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ResultatController extends AbstractController
 {
     #[Route('/resultat', name: 'resultat_index')]
-    public function index(): Response
+    public function index(RiasecRepository  $riasecRepository): Response
     {
-        return $this->render('resultat/index.html.twig', [
-            'controller_name' => 'ResultatController',
-        ]);
+        $riasec = $riasecRepository-> findAll() ;
+        return $this->render('resultat/index.html.twig',compact('riasec'));
     }
 }
