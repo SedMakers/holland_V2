@@ -17,7 +17,7 @@ class ThemeQuatreController extends AbstractController
 {
     #[Route('/themequatre/{serie}', name: 'themeQuatre_index')]
     public function index(
-
+        Request                $request,
         EntityManagerInterface $entityManager,
         PersonnaliteRepository $personnaliteRepository,
         RiasecRepository       $riasecRepository,
@@ -26,8 +26,10 @@ class ThemeQuatreController extends AbstractController
     {
 
 
+        $formPersonnalite = $this->createForm(PersonnaliteType::class);
         $personnalite = $personnaliteRepository->findBy(['serie' => $serie]);
 
+        $formPersonnalite->handleRequest($request);
         dump($_POST);
         if ($_POST) {
             dump(count($_POST));
