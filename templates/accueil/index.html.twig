@@ -1,10 +1,31 @@
 {% extends 'base.html.twig' %}
 {% block head %}
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid deserunt dignissimos dolores inventore laudantium neque nulla optio quae sint. Consequatur, laudantium, rerum. Aperiam fugit inventore placeat ut vel? Atque beatae eius, eum fugiat reprehenderit saepe sequi. Adipisci debitis dolor dolorem est harum nihil reprehenderit sapiente temporibus vero! Accusantium asperiores corporis eligendi iusto natus nihil, non pariatur quaerat quia quibusdam ratione sed soluta velit? Assumenda, atque corporis cupiditate eius harum laboriosam natus nobis nostrum quam, quas quo rem sapiente totam! Amet asperiores assumenda at consequatur, harum id ipsa ipsum, iusto libero provident quas, quasi quis quo recusandae tempora ut voluptatum.</p>
+    <p>Le profil RIASEC est un modèle théorique élaboré par le psychologue et chercheur
+        américain John Holland dans les années soixante.
+        Cette typologie, qui détermine les intérêts et les prédispositions d’une personne
+        dans l’univers professionnel, est devenue une référence mondiale en matière
+        d’orientation scolaire et professionnelle. Les tests utilisant la typologie RIASEC
+        aident à positionner chaque individu sur des motivations.</p>
+    <p>Holland distingue six différents types de personnalité : (R) réaliste, (I) investigateur, (A) artistique, (S) social, (E) entreprenant et (C) conventionnel.
+        Votre appartenance à l’un ou l’autre des six types serait déterminée par vos habiletés, par certains traits de personnalité et par vos intérêts.
+        Chaque profession est donc associée une combinaison de trois lettres.
+        Ce questionnaire (290 énoncés) vous permet de connaitre votre profil RIASEC ainsi que les métiers et professions qui y correspondent.
+        <br><br>
+        <u>Consignes :</u>
+        <br>
+        <br>
+        Cochez les items qui vous correspond ou que vous aimeriez pratiquer,
+        Si une activité vous déplait ou vous laisse indifférent, ne cochez rien.
+        <br>
+        A la fin des questionnaires, vous devez retenir les trois lettres de RIASEC qui vous correspondent.
+    </p>
 {% endblock %}
 {% block body %}
 
-    <div class="divBtn"><a href="" class="boutonStart">Commencer le test.</a></div>
+    <img src="{{ asset('img/riasec.png') }}" alt="" id="riasec">
 
+    <div class="divBtn">
+        <a href="" class="boutonStart">Commencer le test.</a>
+    </div>
 
 {% endblock %}
