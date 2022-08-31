@@ -13,17 +13,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ActivitesController extends AbstractController
 {
-    #[Route('/activites', name: 'activites_index')]
-
+    #[Route('/activites/{serie}', name: 'activites_index')]
     public function index(
-        Request $request,
+        Request                $request,
         EntityManagerInterface $entityManager,
-        ActivitesRepository $ActivitesRepository
+        ActivitesRepository    $ActivitesRepository,
+        int                    $serie
     ): Response
     {
         $formActivites = $this->createForm(ActivitesType::class);
-        $activites = $ActivitesRepository->findAll();
+        $activites = $ActivitesRepository->findBy(['serie' => $serie]);
         $formActivites->handleRequest($request);
-        return $this->renderForm('activites/index.html.twig', compact('formActivites','activites'));
+        return $this->renderForm('activites/index.html.twig', compact('formActivites', 'activites'));
     }
 }

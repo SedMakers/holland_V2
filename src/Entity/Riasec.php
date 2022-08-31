@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RiasecRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RiasecRepository::class)]
@@ -30,6 +32,14 @@ class Riasec
 
     #[ORM\Column]
     private ?int $C = null;
+
+    #[ORM\ManyToMany(targetEntity: Personnalite::class, mappedBy: 'Riasec')]
+    private Collection $resultats;
+
+    public function __construct()
+    {
+        $this->resultats = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +114,33 @@ class Riasec
     public function setC(int $C): self
     {
         $this->C = $C;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Personnalite>
+     */
+    public function getResultats(): Collection
+    {
+        return $this->resultats;
+    }
+
+    public function addResultat(Personnalite $resultat): self
+    {
+        if (!$this->resultats->contains($resultat)) {
+            $this->resultats->add($resultat);
+            $resultat->addRiasec($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResultat(Personnalite $resultat): self
+    {
+        if ($this->resultats->removeElement($resultat)) {
+            $resultat->removeRiasec($this);
+        }
 
         return $this;
     }

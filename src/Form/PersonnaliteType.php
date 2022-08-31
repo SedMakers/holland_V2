@@ -13,10 +13,7 @@ class PersonnaliteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-
-            ->add('question')
             ->add('Suivant', SubmitType::class);
-
 
 
     }
