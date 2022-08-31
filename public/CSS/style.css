@@ -117,7 +117,7 @@ input.custom:checked {
     justify-content: space-between;
 }
 #marianne {
-    width: 15%;
+    width: 20%;
 }
 #cmfp {
     width: 15%;
@@ -139,13 +139,33 @@ input.custom:checked {
     display: flex;
     margin: auto;
     margin-top: 40px;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     box-shadow: 6px 8px 10px 10px rgba(13, 13, 13, 0.36);
+    border-radius: 5px;
 
 }
 p{
     margin-right: 55px;
     margin-left: 35px;
+}
+.resultat{
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+table {
+    margin: auto;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 40px;
+    border-color: #b2afaf;
+    font-size: x-large;
+    background-color: #eeecec;
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 6px 8px 10px 1px rgba(13, 13, 13, 0.35);
 }
 
