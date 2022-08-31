@@ -8,8 +8,7 @@
 
 {% block body %}
 
-    <form action="{{ asset("") }}" method="post">
-
+    <form method="post">
         {% for questions in activites %}
 
             <div class="formulaire">
@@ -18,21 +17,20 @@
                 </div>
                 <div class="choix">
                     <label class="choix">J'aime
-                    <input type="checkbox" name="choix" class="choix_input">
-                    <svg class="choix_check" width="12"
-                         height="12">
-                        <polyline points="9,3 4,8 1,5"></polyline>
-                    </svg>
+                        <input type="checkbox" name="{{ questions.id }}" class="choix_input">
+                        <svg class="choix_check" width="12"
+                             height="12">
+                            <polyline points="9,3 4,8 1,5"></polyline>
+                        </svg>
                     </label>
-                    {#                    <label for="choix">J'aime pas</label> #}
-                    {#                    <input type="checkbox" name="choix" id="choix"> #}
                 </div>
             </div>
         {% endfor %}
 
-        <input type="submit">
-
+        <div class="divBtnSubmit">
+            <input type="submit"
+                   class="btnSubmit">
+        </div>
     </form>
-
 
 {% endblock %}
