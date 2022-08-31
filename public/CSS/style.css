@@ -111,4 +111,41 @@ input.custom:checked {
     fill: none;
     transition: background 0.4s, stroke-dashoffset 0.4s;
 }
+.images{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#marianne {
+    width: 15%;
+}
+#cmfp {
+    width: 15%;
+    height: 15%;
+}
+#mobilite {
+    width: 20%;
+    height: 20%;
+}
+.boutonStart{
+    margin-top: 50px;
+    box-shadow: 10px 10px 16px 0px rgba(13, 13, 13, 1);
+    border: #131313;
+    font-size: larger;
+    background-color: #0739ad;
+    color: white;
+}
+#riasec{
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    width: 50%;
+    height: 50%;
+    box-shadow: 6px 8px 10px 10px rgba(13, 13, 13, 0.36);
+
+}
+p{
+    margin-right: 55px;
+    margin-left: 35px;
+}
 
