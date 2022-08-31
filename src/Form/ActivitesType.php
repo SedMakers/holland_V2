@@ -22,4 +22,5 @@ class ActivitesType extends AbstractType
             'data_class' => Activites::class,
         ]);
     }
+
 }
