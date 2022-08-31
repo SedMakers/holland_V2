@@ -61,6 +61,6 @@ class ActivitesController extends AbstractController
 
             return $this->redirectToRoute('deux_index');
         }
-        return $this->renderForm('activites/index.html.twig', compact('activites', 'serie'));
+        return $this->render('activites/index.html.twig', compact('activites', 'serie'));
     }
 }
