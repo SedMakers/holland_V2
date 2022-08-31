@@ -15,15 +15,20 @@
                     <p class="question">{{ questions.id }} - {{ questions.question }}</p>
                 </div>
                 <div class="choix">
-                    <label for="choix">J'aime</label>
-                    <input type="checkbox" name="choix" id="choix">
-                    {#                    <label for="choix">J'aime pas</label> #}
-                    {#                    <input type="checkbox" name="choix" id="choix"> #}
+                    <label class="choix">J'aime
+                        <input type="checkbox" name="choix" class="choix_input">
+                        <svg class="choix_check" width="12"
+                             height="12">
+                            <polyline points="9,3 4,8 1,5"></polyline>
+                        </svg>
+                    </label>
                 </div>
             </div>
         {% endfor %}
 
-        <input type="submit">
+        <div class="divBtnSubmit">
+            <input type="submit" class="btnSubmit">
+        </div>
 
     </form>
 {% endblock %}
