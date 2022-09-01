@@ -33,26 +33,31 @@ class ThemeAptitudesController extends AbstractController
         $formAptitudes->handleRequest($request);
 
         if ($_POST) {
-
+            $valeur = 0;
+            foreach ($_POST as $choice){
+                if ($choice == 1){
+                    $valeur++;
+                }
+            }
             $resultat = $riasecRepository->findOneBy(['id' => 1]);
             switch ($serie) {
                 case 1 :
-                    $resultat->setR($resultat->getR() + count($_POST) - 1);
+                    $resultat->setR($resultat->getR() + $valeur);
                     break;
                 case 2 :
-                    $resultat->setI($resultat->getI() + count($_POST) - 1);
+                    $resultat->setI($resultat->getI() + $valeur);
                     break;
                 case 3 :
-                    $resultat->setA($resultat->getA() + count($_POST) - 1);
+                    $resultat->setA($resultat->getA() + $valeur);
                     break;
                 case 4 :
-                    $resultat->setS($resultat->getS() + count($_POST) - 1);
+                    $resultat->setS($resultat->getS() + $valeur);
                     break;
                 case 5 :
-                    $resultat->setE($resultat->getE() + count($_POST) - 1);
+                    $resultat->setE($resultat->getE() + $valeur);
                     break;
                 case 6 :
-                    $resultat->setC($resultat->getC() + count($_POST) - 1);
+                    $resultat->setC($resultat->getC() + $valeur);
                     break;
             }
             $entityManager->persist($resultat);
