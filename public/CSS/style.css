@@ -24,6 +24,13 @@
     margin-right: 200px;
 }
 
+.formulaire:hover {
+    background-color: #b2afaf;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 10px 10px 16px rgba(13, 13, 13, 1);
+}
+
 input {
     margin: 25px;
     font-weight: bold;
@@ -112,33 +119,39 @@ input.custom:checked {
     fill: none;
     transition: background 0.4s, stroke-dashoffset 0.4s;
 }
-.images{
+
+.images {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 100px;
 }
+
 #marianne {
     width: 20%;
 }
+
 #cmfp {
     width: 10%;
     height: 10%;
 }
+
 #mobilite {
     width: 15%;
     height: 15%;
 }
-.boutonStart{
+
+.boutonStart {
     margin-top: 30px;
     margin-bottom: 100px;
-    box-shadow: 10px 10px 16px  rgba(13, 13, 13, 1);
+    box-shadow: 10px 10px 16px rgba(13, 13, 13, 1);
     border: #131313;
     font-size: larger;
     background-color: #0739ad;
     color: white;
 }
-#riasec{
+
+#riasec {
     display: flex;
     margin: auto;
     margin-top: 40px;
@@ -146,20 +159,23 @@ input.custom:checked {
     height: 30%;
     filter: drop-shadow(20px 10px 4px #1f1f1f);
 }
-p{
+
+p {
     margin-right: 55px;
     margin-left: 35px;
     padding-right: 100px;
     padding-left: 100px;
     font-size: larger;
 }
-.resultat{
+
+.resultat {
     display: flex;
     margin: auto;
     justify-content: space-evenly;
     align-items: flex-end;
     height: 50px;
 }
+
 table {
     margin: auto;
     display: table;
@@ -176,7 +192,7 @@ table {
 }
 
 
-.gridResult{
+.gridResult {
     display: flex;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -184,12 +200,14 @@ table {
     text-align: center;
     justify-content: center;
 }
-.imageResultat{
+
+.imageResultat {
     width: 60%;
     border-radius: 10px;
     filter: drop-shadow(3px 4px 6px #1f1f1f);
     margin-bottom: 23px;
 }
+
 .Numresultat {
     width: 60%;
     color: #eeecec;
@@ -200,8 +218,22 @@ table {
     border-radius: 10px;
     background-color: #aaa5a5;
 }
-.triRadio{
+
+.triRadio {
     display: flex;
     width: 100px;
     margin: auto;
+}
+
+.login {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginIn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
