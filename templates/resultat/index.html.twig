@@ -7,7 +7,8 @@
     <div class="resultat">
         <h1>Résultat RIASEC</h1>
     </div>
-
+    <br>
+    <br>
 {#    <table class="tableau">#}
 {#        <tr>#}
 {#            <td>R</td>#}
@@ -29,19 +30,36 @@
 {#    </table>#}
     {% for resultat in riasec  %}
         <div class="gridResult">
-            <p id="realiste">R</p>
-            <p id="investigateur">I</p>
-            <p id="artistique">A</p>
-            <p id="social">S</p>
-            <p id="entreprenant">E</p>
-            <p id="conventionnel">C</p>
-            <p>{{ resultat.r }}</p>
-            <p>{{ resultat.i }}</p>
-            <p>{{ resultat.a }}</p>
-            <p>{{ resultat.s }}</p>
-            <p>{{ resultat.e }}</p>
-            <p>{{ resultat.c }}</p>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0000_R.jpg') }}" alt="" class="imageResultat">
 
+                <h2 class="Numresultat">{{ resultat.r }}</h2>
+            </div>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0001_I.jpg') }}" alt="" class="imageResultat">
+
+                <h2 class="Numresultat">{{ resultat.i }}</h2>
+            </div>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0002_A.jpg') }}" alt="" class="imageResultat">
+
+                <h2 class="Numresultat">{{ resultat.a }}</h2>
+            </div>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0003_S.jpg') }}" alt="" class="imageResultat">
+
+                <h2 class="Numresultat">{{ resultat.s }}</h2>
+            </div>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0004_E.jpg') }}" alt="" class="imageResultat">
+
+                <h2 class="Numresultat">{{ resultat.e }}</h2>
+            </div>
+            <div>
+                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0005_C.jpg') }}" alt="" class="imageResultat">
+
+                <h2 class="Numresultat">{{ resultat.c }}</h2>
+            </div>
         </div>
     {% endfor %}
 
