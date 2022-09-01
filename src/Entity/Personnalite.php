@@ -22,14 +22,6 @@ class Personnalite
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $question = null;
 
-    #[ORM\ManyToMany(targetEntity: Riasec::class, inversedBy: 'resultats')]
-    private Collection $Riasec;
-
-    public function __construct()
-    {
-        $this->Riasec = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -56,30 +48,6 @@ class Personnalite
     public function setQuestion(?string $question): self
     {
         $this->question = $question;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Riasec>
-     */
-    public function getRiasec(): Collection
-    {
-        return $this->Riasec;
-    }
-
-    public function addRiasec(Riasec $riasec): self
-    {
-        if (!$this->Riasec->contains($riasec)) {
-            $this->Riasec->add($riasec);
-        }
-
-        return $this;
-    }
-
-    public function removeRiasec(Riasec $riasec): self
-    {
-        $this->Riasec->removeElement($riasec);
 
         return $this;
     }
