@@ -20,11 +20,8 @@
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    border-bottom: 1px solid black;
-    margin-left: 200px;
-    margin-right: 200px;
-
-
+    margin-left: 400px;
+    margin-right: 250px;
 }
 
 input {
