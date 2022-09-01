@@ -20,8 +20,8 @@
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    margin-left: 400px;
-    margin-right: 250px;
+    margin-left: 300px;
+    margin-right: 200px;
 }
 
 input {
@@ -89,6 +89,7 @@ input.custom:checked {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 .choix:hover .choix_check {
@@ -148,6 +149,8 @@ input.custom:checked {
 p{
     margin-right: 55px;
     margin-left: 35px;
+    padding-right: 100px;
+    padding-left: 100px;
     font-size: larger;
 }
 .resultat{
@@ -196,4 +199,9 @@ table {
     margin: auto;
     border-radius: 10px;
     background-color: #aaa5a5;
+}
+.triRadio{
+    display: flex;
+    width: 100px;
+    margin: auto;
 }

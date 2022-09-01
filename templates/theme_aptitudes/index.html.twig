@@ -12,25 +12,20 @@
                 <div>
                     <h3 class="question">{{ questions.question }}</h3>
                 </div>
-                <div >
+                <div class="triRadio">
                     <div>
-                        <label >Faible</label>
-                        <input type="radio" value="0" name="{{ questions.id }}" >
+                        <label for="faible">Faible</label>
+                        <input type="radio" value="0" name="{{ questions.id }}" id="faible">
 
                     </div>
                     <div>
-                        <label >Moyen</label>
-                        <input type="radio" value="0" name="{{ questions.id }}" >
+                        <label for="moyen">Moyen</label>
+                        <input type="radio" value="0" name="{{ questions.id }}" id="moyen">
                     </div>
                     <div>
-                        <label >Fort</label>
-                        <input type="radio" value="1" name="{{ questions.id }}" >
+                        <label for="fort">Fort</label>
+                        <input type="radio" value="1" name="{{ questions.id }}" id="fort">
                     </div>
-
-
-
-
-
 
                 </div>
             </div>

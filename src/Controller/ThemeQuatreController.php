@@ -52,6 +52,7 @@ class ThemeQuatreController extends AbstractController
             }
             $entityManager->persist($resultat);
             $entityManager->flush();
+
             if ($serie < 6) {
                 return $this->redirectToRoute('themeQuatre_index', ['serie' => $serie + 1]);
             }
