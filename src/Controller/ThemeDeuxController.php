@@ -56,7 +56,7 @@ class ThemeDeuxController extends AbstractController
             if ($serie < 6) {
                 return $this->redirectToRoute('deux_index', ['serie' => $serie + 1]);
             }
-            return $this->redirectToRoute('aptitudes_index', ['serie' => 1]);
+            return $this->redirectToRoute('aptitudes_index',  ['serie' => 1]);
 
         }
         return $this->renderForm('theme_deux/index.html.twig', compact('metiers', 'serie'));
