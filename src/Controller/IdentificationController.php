@@ -26,11 +26,9 @@ class IdentificationController extends AbstractController
         $form = $this->createForm(IdentificationType::class, $user);
         $form->handleRequest($request);
         $user->setDate($date);
-        dump($user);
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager->persist($user);
-            dump($user);
 
             $entityManager->flush();
             return $this->redirectToRoute('accueil_index');
