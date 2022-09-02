@@ -20,6 +20,24 @@
 
 </header>
 <body>
+    <nav>
+        {% if is_granted('ROLE_ADMIN')%}
+            <ul>
+                <li><a href="{{ path('admin') }}">DASHBOARD</a> </li>
+            </ul>
+        {% endif %}
+        {% if not app.user %}
+            <ul>
+                <li><a href="{{ path('app_login') }}">Login</a> </li>
+            </ul>
+        {% endif %}
+        {% if app.user %}
+            <ul>
+                <li><a href="{{ path('app_logout') }}">Deconnection</a> </li>
+            </ul>
+        {% endif %}
+
+    </nav>
 {% block head %}{% endblock %}
 {% block body %}{% endblock %}
 </body>
