@@ -25,6 +25,9 @@ class Identification
     #[ORM\Column(length: 50)]
     private ?string $mail = null;
 
+    #[ORM\OneToOne(mappedBy: 'Identification', cascade: ['persist', 'remove'])]
+    private ?Riasec $riasec = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,28 @@ class Identification
     public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getRiasec(): ?Riasec
+    {
+        return $this->riasec;
+    }
+
+    public function setRiasec(?Riasec $riasec): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($riasec === null && $this->riasec !== null) {
+            $this->riasec->setIdentification(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($riasec !== null && $riasec->getIdentification() !== $this) {
+            $riasec->setIdentification($this);
+        }
+
+        $this->riasec = $riasec;
 
         return $this;
     }

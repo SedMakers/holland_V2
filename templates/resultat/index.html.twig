@@ -9,63 +9,44 @@
     </div>
     <br>
     <br>
-{#    <table class="tableau">#}
-{#        <tr>#}
-{#            <td>R</td>#}
-{#            <td>I</td>#}
-{#            <td>A</td>#}
-{#            <td>S</td>#}
-{#            <td>E</td>#}
-{#            <td>C</td>#}
-{#        </tr>#}
 
-{#        <tr>#}
-{#            <td>{{  }}</td>#}
-{#            <td>{{  }}</td>#}
-{#            <td>{{  }}</td>#}
-{#            <td>{{  }}</td>#}
-{#            <td>{{  }}</td>#}
-{#            <td>{{  }}</td>#}
-{#        </tr>#}
-{#    </table>#}
-    {% for resultat in riasec  %}
-        <div class="gridResult">
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0000_R.jpg') }}" alt="" class="imageResultat">
+    <div class="gridResult">
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0000_R.jpg') }}" alt="" class="imageResultat">
 
-                <h2 class="Numresultat">{{ resultat.r }}</h2>
-            </div>
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0001_I.jpg') }}" alt="" class="imageResultat">
-
-                <h2 class="Numresultat">{{ resultat.i }}</h2>
-            </div>
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0002_A.jpg') }}" alt="" class="imageResultat">
-
-                <h2 class="Numresultat">{{ resultat.a }}</h2>
-            </div>
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0003_S.jpg') }}" alt="" class="imageResultat">
-
-                <h2 class="Numresultat">{{ resultat.s }}</h2>
-            </div>
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0004_E.jpg') }}" alt="" class="imageResultat">
-
-                <h2 class="Numresultat">{{ resultat.e }}</h2>
-            </div>
-            <div>
-                <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0005_C.jpg') }}" alt="" class="imageResultat">
-
-                <h2 class="Numresultat">{{ resultat.c }}</h2>
-            </div>
+            <h2 class="Numresultat">{{ riasec.r }}</h2>
         </div>
-        <br><br>
-        <div class="divBtn">
-            <a href="{{ path("resultat_reset") }}" class="boutonStart">Terminer</a>
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0001_I.jpg') }}" alt="" class="imageResultat">
+
+            <h2 class="Numresultat">{{ riasec.i }}</h2>
         </div>
-    {% endfor %}
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0002_A.jpg') }}" alt="" class="imageResultat">
+
+            <h2 class="Numresultat">{{ riasec.a }}</h2>
+        </div>
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0003_S.jpg') }}" alt="" class="imageResultat">
+
+            <h2 class="Numresultat">{{ riasec.s }}</h2>
+        </div>
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0004_E.jpg') }}" alt="" class="imageResultat">
+
+            <h2 class="Numresultat">{{ riasec.e }}</h2>
+        </div>
+        <div>
+            <img src="{{ asset('img/Hexagone_RIASEC-avec-texte_0_0_0005_C.jpg') }}" alt="" class="imageResultat">
+
+            <h2 class="Numresultat">{{ riasec.c }}</h2>
+        </div>
+    </div>
+    <br><br>
+    <div class="divBtn">
+        <a href="{{ path("resultat_reset") }}" class="boutonStart">Terminer</a>
+    </div>
+
 
 
 
