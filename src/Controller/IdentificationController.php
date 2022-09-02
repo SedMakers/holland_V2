@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints\Date;
 
 class IdentificationController extends AbstractController
 {
-    #[Route('/identification', name: 'app_identification')]
+    #[Route('/', name: 'app_identification')]
     public function index(
         EntityManagerInterface $entityManager,
         IdentificationType     $identificationType,
