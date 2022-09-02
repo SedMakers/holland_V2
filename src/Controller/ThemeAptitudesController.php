@@ -8,22 +8,25 @@ use App\Form\AptitudeType;
 
 use App\Form\PersonnaliteType;
 use App\Repository\AptitudesRepository;
+use App\Repository\IdentificationRepository;
 use App\Repository\RiasecRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ThemeAptitudesController extends AbstractController
 {
     #[Route('/aptitudes/{serie}', name: 'aptitudes_index')]
     public function index(
-        Request                $request,
-        EntityManagerInterface $entityManager,
-        AptitudesRepository    $aptitudeRepository,
-        RiasecRepository       $riasecRepository,
-        int                    $serie
+        Request                  $request,
+        EntityManagerInterface   $entityManager,
+        AptitudesRepository      $aptitudeRepository,
+        RiasecRepository         $riasecRepository,
+        int                      $serie,
+        IdentificationRepository $identificationRepository
     ): Response
     {
 
@@ -34,12 +37,13 @@ class ThemeAptitudesController extends AbstractController
 
         if ($_POST) {
             $valeur = 0;
-            foreach ($_POST as $choice){
-                if ($choice == 1){
+            foreach ($_POST as $choice) {
+                if ($choice == 1) {
                     $valeur++;
                 }
             }
-            $resultat = $riasecRepository->findOneBy(['id' => 1]);
+            $session = new Session();
+            $resultat = $riasecRepository->findOneBy(["Identification" => $identificationRepository->findOneBy(['id' => $session->get('id')])]);
             switch ($serie) {
                 case 1 :
                     $resultat->setR($resultat->getR() + $valeur);

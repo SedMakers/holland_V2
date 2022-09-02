@@ -4,23 +4,26 @@ namespace App\Controller;
 
 use App\Form\MetiersType;
 
+use App\Repository\IdentificationRepository;
 use App\Repository\MetiersRepository;
 use App\Repository\RiasecRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ThemeDeuxController extends AbstractController
 {
     #[Route('/deux/{serie}', name: 'deux_index')]
     public function index(
-        Request                $request,
-        EntityManagerInterface $entityManager,
-        MetiersRepository      $metiersRepository,
-        RiasecRepository       $riasecRepository,
-        int                    $serie
+        Request                  $request,
+        EntityManagerInterface   $entityManager,
+        MetiersRepository        $metiersRepository,
+        RiasecRepository         $riasecRepository,
+        int                      $serie,
+        IdentificationRepository $identificationRepository
     ): Response
     {
         $formMetiers = $this->createForm(MetiersType::class);
@@ -30,7 +33,8 @@ class ThemeDeuxController extends AbstractController
 
         if ($_POST) {
 
-            $resultat = $riasecRepository->findOneBy(['id' => 1]);
+            $session = new Session();
+            $resultat = $riasecRepository->findOneBy(["Identification" => $identificationRepository->findOneBy(['id' => $session->get('id')])]);
             switch ($serie) {
                 case 1 :
                     $resultat->setR($resultat->getR() + count($_POST) - 1);
@@ -56,7 +60,7 @@ class ThemeDeuxController extends AbstractController
             if ($serie < 6) {
                 return $this->redirectToRoute('deux_index', ['serie' => $serie + 1]);
             }
-            return $this->redirectToRoute('aptitudes_index',  ['serie' => 1]);
+            return $this->redirectToRoute('aptitudes_index', ['serie' => 1]);
 
         }
         return $this->renderForm('theme_deux/index.html.twig', compact('metiers', 'serie'));
