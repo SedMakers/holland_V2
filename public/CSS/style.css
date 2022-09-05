@@ -1,9 +1,13 @@
 .boutonStart {
+    display: flex;
     padding: 15px;
-    border: 2px solid black;
     text-decoration: none;
-    color: black;
     border-radius: 0.5em;
+    margin: auto;
+    box-shadow: 10px 10px 16px rgba(13, 13, 13, 1);
+    font-size: larger;
+    background-color: #0739ad;
+    color: white;
 }
 
 .title {
@@ -141,15 +145,6 @@ input.custom:checked {
     height: 15%;
 }
 
-.boutonStart {
-    margin-top: 30px;
-    margin-bottom: 100px;
-    box-shadow: 10px 10px 16px rgba(13, 13, 13, 1);
-    border: #131313;
-    font-size: larger;
-    background-color: #0739ad;
-    color: white;
-}
 
 #riasec {
     display: flex;
@@ -226,14 +221,16 @@ table {
 }
 
 .login {
+    width: 400px;
     display: flex;
+    justify-content: center;
     margin: auto;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .loginIn {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: space-evenly
+
 }
